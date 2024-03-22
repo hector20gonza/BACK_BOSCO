@@ -26,7 +26,7 @@ const getHousingWithServicesHandler = async (location) => {
       // Construir las URL completas para las imágenes y agregarlas a la respuesta
       const housingWithImagesURL = housingWithServices.map(housing => ({
         ...housing.toJSON(),
-        images: housing.images.map(image => `http://localhost:3001/Uploads${image.replace('/uploads', '')}`) // Corrige la URL de la imagen
+        images: housing.images.map(image => `https://backbosco.up.railway.app/Uploads${image.replace('/uploads', '')}`) // Corrige la URL de la imagen
       }));
   
       return housingWithImagesURL;
