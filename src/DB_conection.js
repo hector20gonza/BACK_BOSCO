@@ -1,7 +1,7 @@
 /**DB_USER= postgres
  DB_PASSWORD= 123456
- DB_HOST=localhost
- DB_NAME=bosco */
+ DB_HOST=monorail.proxy.rlwy.net
+ DB_NAME=railway */
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const { DB_URL } = process.env;
@@ -12,13 +12,13 @@ const ProfileModel = require("./Models/Profile");
 const ServiceModel = require("./Models/Service");
 const RoleModel = require("./Models/Role");
 
-// const sequelize = new Sequelize(
-//   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-//   { logging: false, native: false }
-// );
+const sequelize = new Sequelize(
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+   { logging: false, native: false }
+ );
 
-const sequelize = new Sequelize( DB_URL, { logging: false, native: false }
-);
+//const sequelize = new Sequelize( DB_URL, { logging: false, native: false }
+//);
 
 HousingModel(sequelize);
 MascotaModel(sequelize);
