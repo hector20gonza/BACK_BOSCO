@@ -4,7 +4,7 @@
  DB_NAME=railway */
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const { DB_URL } = process.env;
+const { DB_NAME,DB_USER,DB_PASSWORD,DB_HOST } = process.env;
 const HousingModel = require("./Models/Housing");
 const MascotaModel = require("./Models/Mascota");
 const UserModel = require("./Models/User");
