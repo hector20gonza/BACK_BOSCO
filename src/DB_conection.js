@@ -1,3 +1,7 @@
+/**DB_USER= postgres
+ DB_PASSWORD= 123456
+ DB_HOST=localhost
+ DB_NAME=bosco */
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const { DB_URL } = process.env;
