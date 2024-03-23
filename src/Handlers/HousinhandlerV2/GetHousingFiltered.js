@@ -35,14 +35,9 @@ const includeAll=(serviceId)=>{
   }
   
 }
-const AlldataFormat= (filter)=>{
-  return  filter.map(housing => ({
-    ...housing.toJSON(),
-    images: housing.images.map(image => `https://backbosco.up.railway.app/Uploads${image.replace('/uploads', '')}`) // Corrige la URL de la imagen
-  }));
 
 
-}
+
 
 const getHousingFilteredHandler = async (
   location,
@@ -86,7 +81,7 @@ const getHousingFilteredHandler = async (
       const housingFiltered = await Housing.findAll({include, where, order });
       
   
-      return AlldataFormat(housingFiltered)
+      return housingFiltered;
       
    
 
