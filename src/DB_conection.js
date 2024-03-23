@@ -17,12 +17,12 @@ const RoleModel = require("./Models/Role");
    { logging: false, native: false }
  );
 */
-//const sequelize = new Sequelize( DB_URL, { logging: false, native: false }
-//);
- const sequelize = new Sequelize(
+const sequelize = new Sequelize( DB_URL, { logging: false, native: false }
+);
+ /*const sequelize = new Sequelize(
    `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
   { logging: false, native: false }
- );
+ );*/
 HousingModel(sequelize);
 MascotaModel(sequelize);
 UserModel(sequelize);
