@@ -21,7 +21,7 @@ const addhousing = async (req, res) => {
       for (const imagePath of imagePaths) {
         // Subir la imagen a Cloudinary
         const result = await cloudinary.uploader.upload(imagePath, options);
-        console.log(result);
+        
         // Almacenar la URL de la imagen subida
         uploadedImageUrls.push(result.secure_url);
         // Eliminar el archivo local después de subirlo a Cloudinary
